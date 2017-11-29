@@ -1,12 +1,12 @@
-#ifndef _BLOCK_H
-#define _BLOCK_H
+#ifndef _JBLOCK_H
+#define _JBLOCK_H
 #include "block.h"
 struct Coordinate{
 	unsigned int row;
 	unsigned int col;
 }
 
-class Block{
+class JBlock{
 	std::vector<Coordinate> coord;
 	int position; 
 	char blockType;
