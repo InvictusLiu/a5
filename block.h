@@ -9,15 +9,15 @@ struct Coordinate{
 }
 
 class Block{
+	std::vector<Coordinate> coord; //size of coord is side*side
+	int side; //side length of block
+	public:
 	~Block();
 	Block(const Block &other);
 	Block &operator=(const Block &other);
 	Block(Block &&other);
 	Block &operator=(Block &&other);
 	
-	std::vector<Coordinate> coord; //size of coord is side*side
-	int side; //side length of block
-	public:
 	void left();
 	void right();
 	void down();
