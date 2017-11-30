@@ -54,3 +54,11 @@ int JBlock::getLevel(){
 	return level;
 }
 
+bool Used(int r, int c) {
+	for (auto c : coord) {
+		if (c.row == r && c.col == c && c.sym != '-') {
+			return true;
+		}
+	}
+	return false;
+}
