@@ -42,10 +42,10 @@ void JBlock::Clockwise(){
 	}
 }
 
-vector<coordinate> JBlock::getPosition(){
+vector<coordinate> JBlock::getCoord(){
 	return coord;
 }
 
 char JBlock::getSym() {
-		return 'l';
+		return 'J';
 }
