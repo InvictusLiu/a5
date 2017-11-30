@@ -5,5 +5,6 @@
 
 class JBlock : public Block{
 	public:
+	JBlock(int row, int col, std::string sym, int level);
 	std::string getSym() override;
 }
