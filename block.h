@@ -9,6 +9,8 @@ struct Coordinate{
 }
 
 class Block{
+	
+	
 	std::vector<Coordinate> coord; //size of coord is side*side
 	int side; //side length of block
 	public:
