@@ -47,5 +47,10 @@ vector<coordinate> JBlock::getCoord(){
 }
 
 char JBlock::getSym() {
-		return 'J';
+	return 'J';
 }
+
+int JBlock::getLevel(){
+	return level;
+}
+
