@@ -1,30 +1,21 @@
 #include "Jblock.h"
 #include <vector>
 void JBlock::left(){
-	for (unsigned int i =0; i < coord.size(); i++){
-		if (coord[i].col ==0){return ;}
+	for(auto &c : coord) {
+		c.col--;
 	}
-	for (unsigned int i =0; i < coord.size(); i++){
-        	coord[i].col = coord[i].col - 1;
-        }
 }
 
 void JBlock::right(){
-        for (unsigned int i =0; i < coord.size(); i++){
-                if (coord[i].col ==0){return ;}
-        }
-        for (unsigned int i =0; i < coord.size(); i++){
-                coord[i].col = coord[i].col + 1;
-        }
+        for(auto &c : coord) {
+		c.col++;
+	}
 }
 
 void JBlock::down(){
-        for (unsigned int i =0; i < coord.size(); i++){
-                if (coord[i].row == 17){return ;}
-        }
-        for (unsigned int i =0; i < coord.size(); i++){
-                coord[i].row = coord[i].row + 1;
-        }
+        for(auto &c : coord) {
+		c.row--;
+	}
 }
 
 void JBlock::counterClockwise(){
