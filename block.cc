@@ -58,3 +58,4 @@ bool Block::Used(int r, int c) {
 		}
 	}
 return false;
+}
