@@ -4,6 +4,7 @@
 struct Coordinate{
 	unsigned int row;
 	unsigned int col;
+	char sym;
 }
 
 class JBlock{
