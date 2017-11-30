@@ -2,8 +2,8 @@
 #define _BLOCK_H
 
 struct Coordinate{
-	unsigned int row;
-	unsigned int col;
+	int row;
+	int col;
 	char sym; // '-' if not occupied
 	int level;
 }
