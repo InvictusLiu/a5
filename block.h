@@ -4,16 +4,20 @@
 struct Coordinate{
 	unsigned int row;
 	unsigned int col;
+	char sym; // '-' if not occupied
+	int level;
 }
 
 class Block{
-	std::vector<Coordinate> coord;
-	int position; //1 is the initial position; counting up if clockwise, vice versa
-	char blockType;
-	bool isHeavy;
+	std::vector<Coordinate> coord; //size of coord is side*side
+	int side; //side length of block
 	public:
-	virtual void left() = 0;
-	virtual void right() = 0;
-
-
+	void left();
+	void right();
+	void down();
+	void counterClockwise();
+	void Clockwise();
+	vector<coordinate> getCoord();
+	virtual char getSym() = 0;
+	
 }
