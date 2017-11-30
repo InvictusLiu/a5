@@ -42,7 +42,7 @@ void JBlock::Clockwise(){
 	}
 }
 
-int JBlock::getPosition(){
-
+vector<coordinate> JBlock::getPosition(){
+	return coord;
 }
 
