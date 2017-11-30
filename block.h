@@ -23,3 +23,4 @@ class Block{
 	virtual std::string getSym() = 0;
 	bool Used(int r, int c);
 }
+#endif
