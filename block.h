@@ -19,5 +19,5 @@ class Block{
 	void Clockwise();
 	vector<coordinate> getCoord();
 	virtual char getSym() = 0;
-	
+	bool Used(int r, int c);
 }
