@@ -24,8 +24,8 @@ void JBlock::counterClockwise(){
 		oldCoord.emplace_back(c);
 	}
 	for (int i = 0; i < size; i++){
-		for (int i = 0; i < size; i++){
-			coord[i*size+j] = oldCoord[size*(size-j-1)+i];
+		for (int j = 0; j < size; j++){
+			coord[i*size+j] = oldCoord[size*j+size-i-1];
 		}
 	}
 }
@@ -36,7 +36,7 @@ void JBlock::Clockwise(){
 		oldCoord.emplace_back(c);
 	}
 	for (int i = 0; i < size; i++){
-		for (int i = 0; i < size; i++){
+		for (int j = 0; j < size; j++){
 			coord[i*size+j] = oldCoord[size*(size-j-1)+i];
 		}
 	}
