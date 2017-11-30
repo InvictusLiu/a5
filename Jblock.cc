@@ -46,3 +46,6 @@ vector<coordinate> JBlock::getPosition(){
 	return coord;
 }
 
+char JBlock::getSym() {
+		return 'l';
+}
