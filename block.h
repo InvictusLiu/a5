@@ -4,7 +4,7 @@
 struct Coordinate{
 	int row;
 	int col;
-	char sym; // '-' if not occupied
+	std::string sym; // "-" if not occupied
 	int level;
 }
 
@@ -18,6 +18,6 @@ class Block{
 	void counterClockwise();
 	void Clockwise();
 	vector<coordinate> getCoord();
-	virtual char getSym() = 0;
+	virtual std::string getSym() = 0;
 	bool Used(int r, int c);
 }
