@@ -1,5 +1,21 @@
 #include "block.h"
 #include <vector>
+
+Block::~Block(){}
+
+//copy ctor
+Block::Block(const Block &other){
+	this->side = other.side;
+	for (unsigned int i = 0; i < other.coord.size(); i++){
+		this->coord.emplace_back(coord[i]);
+	}
+}
+
+//copy assign
+Block &Block::operator=(const Block &other){
+	
+}
+
 void Block::left(){
 	for(auto &c : coord) {
 		c.col--;
@@ -23,9 +39,9 @@ void Block::counterClockwise(){
 	for(auto &c : coord) {
 		oldCoord.emplace_back(c);
 	}
-	for (int i = 0; i < side; i++){
-		for (int j = 0; j < side; j++){
-			coord[i*side+j] = oldCoord[side*j+side-i-1];
+	for (int i = 0; i < size; i++){
+		for (int j = 0; j < size; j++){
+			coord[i*size+j] = oldCoord[size*j+size-i-1];
 		}
 	}
 }
@@ -35,9 +51,9 @@ void Block::Clockwise(){
 	for(auto &c : coord) {
 		oldCoord.emplace_back(c);
 	}
-	for (int i = 0; i < side; i++){
-		for (int j = 0; j < side; j++){
-			coord[i*side+j] = oldCoord[side*(side-j-1)+i];
+	for (int i = 0; i < size; i++){
+		for (int j = 0; j < size; j++){
+			coord[i*size+j] = oldCoord[size*(size-j-1)+i];
 		}
 	}
 }
