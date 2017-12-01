@@ -5,7 +5,7 @@ struct Coordinate{
 	int row;
 	int col;
 	std::string sym; // "-" if not occupied
-	int level;
+	bool heavy;
 }
 
 class Block{
@@ -26,5 +26,8 @@ class Block{
 	vector<coordinate> getCoord();
 	virtual std::string getSym() = 0;
 	bool Used(int r, int c);
+	bool isHeavy();
+	void setHeavy();
+	void unsetHeavy();
 }
 #endif
