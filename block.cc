@@ -73,5 +73,5 @@ bool Block::Used(int r, int c) {
 			return true;
 		}
 	}
-return false;
+	return false;
 }
