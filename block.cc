@@ -12,7 +12,6 @@ Block::Block(const Block &other){
 
 //copy assign
 Block &Block::operator=(const Block &other){
-	delete this->coord;
 	this->side = other.side;
 	this->coord = other.coord;
 	return *this;
