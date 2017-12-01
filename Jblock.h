@@ -12,6 +12,7 @@ class JBlock : public Block{
 	JBlock(JBlock &&other);
 	JBlock &operator=(JBlock &&other);
 	
+	
 	std::string getSym() override;
 }
 
