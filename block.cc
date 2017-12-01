@@ -62,11 +62,6 @@ vector<coordinate> Block::getCoord(){
 	return coord;
 }
 
-
-int Block::getLevel(){
-	return level;
-}
-
 bool Block::Used(int r, int c) {
 	for (auto c : coord) {
 		if (c.row == r && c.col == c && c.sym != "-") {
@@ -74,4 +69,16 @@ bool Block::Used(int r, int c) {
 		}
 	}
 	return false;
+}
+
+bool Block::isHeavy() {
+	return heavy;
+}
+
+void Block::setHeavy() {
+	heavy = true;
+}
+
+void Block::unsetHeavy() {
+	heavy = false;
 }
