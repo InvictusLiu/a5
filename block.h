@@ -5,12 +5,12 @@ struct Coordinate{
 	int row;
 	int col;
 	std::string sym; // "-" if not occupied
-	bool heavy;
 }
 
 class Block{
 	std::vector<Coordinate> coord; //size of coord is side*side
 	int side; //side length of block
+	bool heavy;
 	public:
 	virtual ~Block();
 	Block(const Block &other);
