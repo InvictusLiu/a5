@@ -23,9 +23,9 @@ void Block::counterClockwise(){
 	for(auto &c : coord) {
 		oldCoord.emplace_back(c);
 	}
-	for (int i = 0; i < size; i++){
-		for (int j = 0; j < size; j++){
-			coord[i*size+j] = oldCoord[size*j+size-i-1];
+	for (int i = 0; i < side; i++){
+		for (int j = 0; j < side; j++){
+			coord[i*side+j] = oldCoord[side*j+side-i-1];
 		}
 	}
 }
@@ -35,9 +35,9 @@ void Block::Clockwise(){
 	for(auto &c : coord) {
 		oldCoord.emplace_back(c);
 	}
-	for (int i = 0; i < size; i++){
-		for (int j = 0; j < size; j++){
-			coord[i*size+j] = oldCoord[size*(size-j-1)+i];
+	for (int i = 0; i < side; i++){
+		for (int j = 0; j < side; j++){
+			coord[i*side+j] = oldCoord[side*(side-j-1)+i];
 		}
 	}
 }
