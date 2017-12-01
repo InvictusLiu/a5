@@ -12,11 +12,11 @@ class Block{
 	std::vector<Coordinate> coord; //size of coord is side*side
 	int side; //side length of block
 	public:
-	~Block();
+	virtual ~Block();
 	Block(const Block &other);
-	Block &operator=(const Block &other);
-	Block(Block &&other);
-	Block &operator=(Block &&other);
+	virtual Block &operator=(const Block &other);
+	// Block(Block &&other);
+	// Block &operator=(Block &&other);
 	
 	void left();
 	void right();
