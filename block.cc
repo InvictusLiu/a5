@@ -1,19 +1,21 @@
 #include "block.h"
 #include <vector>
 
+//dtor
 Block::~Block(){}
 
 //copy ctor
 Block::Block(const Block &other){
 	this->side = other.side;
-	for (unsigned int i = 0; i < other.coord.size(); i++){
-		this->coord.emplace_back(coord[i]);
-	}
+	this->coord = other.coord;
 }
 
 //copy assign
 Block &Block::operator=(const Block &other){
-	
+	delete this->coord;
+	this->side = other.side;
+	this->coord = other.coord;
+	return *this;
 }
 
 void Block::left(){
@@ -62,6 +64,11 @@ vector<coordinate> Block::getCoord(){
 	return coord;
 }
 
+
+int Block::getLevel(){
+	return level;
+}
+
 bool Block::Used(int r, int c) {
 	for (auto c : coord) {
 		if (c.row == r && c.col == c && c.sym != "-") {
@@ -69,16 +76,4 @@ bool Block::Used(int r, int c) {
 		}
 	}
 	return false;
-}
-
-bool Block::isHeavy() {
-	return heavy;
-}
-
-void Block::setHeavy() {
-	heavy = true;
-}
-
-void Block::unsetHeavy() {
-	heavy = false;
 }
