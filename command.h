@@ -17,7 +17,7 @@ class Command: public Observer{
         std::vector<string> cmdCollect{left,right,down,drop,levelup,leveldown,clockwise,counterclockwise,random,norandom,restart,hint,sequence};
         
         public:
-        Command(int seed, string seq, bool hasGraphic, int startLevel){};
+        Command(int seed, string cmd, bool hasGraphic, int startLevel){};
         interpretCommand(); //notify observers
 };
 
