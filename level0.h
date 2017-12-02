@@ -10,7 +10,7 @@ class Level0: public Level{
 
 	public:
 	Level0(int lvl, std::string seq);
-	int getlevel() override;
+	int getLevel() override;
 	std::shared_ptr<Block> createBlock() override;
 	~Level0();
 
