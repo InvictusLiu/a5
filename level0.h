@@ -9,7 +9,7 @@ class Level0: public Level{
 	vector<string> words;
 
 	public:
-	Level0(int lvl, std::string seq);
+	Level0(std::string seq);
 	int getLevel() override;
 	std::shared_ptr<Block> createBlock() override;
 	~Level0();
