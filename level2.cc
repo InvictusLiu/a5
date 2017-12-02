@@ -16,7 +16,7 @@ using namespace std;
 
 Level2::Level2(int lvl, int seed = 0): lvl{lvl}, seed{seed}{}
 
-int Level2::getlevel() {
+int Level2::getLevel() {
 	return lvl;
 }
 
