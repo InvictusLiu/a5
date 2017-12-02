@@ -14,10 +14,10 @@ using namespace std;
 #include "jblock.h"
 #include "lblock.h"
 
-Level2::Level2(int lvl, int seed = 0): lvl{lvl}, seed{seed}{}
+Level2::Level2(int seed = 0):seed{seed}{}
 
 int Level2::getLevel() {
-	return lvl;
+	return 2;
 }
 
 std::shared_ptr<Block> createBlock() {
