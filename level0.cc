@@ -6,6 +6,7 @@
 using namespace std;
 
 #include "level0.h"
+#include "block.h"
 #include "iblock.h"
 #include "tblock.h"
 #include "zblock.h"
