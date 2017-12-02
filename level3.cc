@@ -21,7 +21,7 @@ Level3::int getLevel(){
 
 Level3::shared_ptr<Block> createBlock(){
 	srand(seed);
-	int r = srand() % 9;
+	int r = rand() % 9;
 	if ((r == 0)||(r == 1)){
 		return make_shared<SBlock>(3);
 
