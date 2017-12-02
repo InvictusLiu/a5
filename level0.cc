@@ -16,7 +16,7 @@ using namespace std;
 #include "lblock.h"
 
 
-Level0::Level0(int lvl, string seq): lvl{0}, seq{seq}{}
+Level0::Level0（string seq):seq{seq}{}
 
 Level0::getLevel(){
 	return 0;
