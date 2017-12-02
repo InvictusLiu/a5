@@ -1,78 +1,137 @@
-#include "block.h"
+#include <iostream>
 #include <vector>
+#include <string>
+#include "block.h"
 
-//dtor
-Block::~Block(){}
+using namespace std;
 
-//copy ctor
-Block::Block(const Block &other){
-	this->side = other.side;
-	this->coord = other.coord;
+// ctor
+Block::Block(int level): level{level} {
+	if (level == 3 || level == 4) {
+		heavy = true;
+	}
+	else {
+		heavy = false;
+	}
 }
 
-//copy assign
-Block &Block::operator=(const Block &other){
-	this->side = other.side;
-	this->coord = other.coord;
+
+// copy ctor
+Block::Block(const Block &other): level{other.level}, heavy{other.heavy}, size{size},
+	coord{other.coord}, sym{sym} {}
+
+
+// copy assignment
+Block& Block::operator=(const Block &other) {
+	if (this != &other) {
+		level = other.level;
+		heavy = other.heavy;
+		size = other.size;
+		coord = other.coord;
+		sym = other.sym;
+	}
 	return *this;
 }
 
-void Block::left(){
+
+// dtor
+Block::~Block() {}
+
+
+// operation
+void Block::left() {
 	for(auto &c : coord) {
 		c.col--;
 	}
 }
 
-void Block::right(){
-        for(auto &c : coord) {
+void Block::right() {
+	for(auto &c : coord) {
 		c.col++;
 	}
 }
 
-void Block::down(){
-        for(auto &c : coord) {
-		c.row--;
+void Block::down() {
+	for(auto &c : coord) {
+		c.row++;
+	}
+}
+
+void Block::Clockwise() {
+	vector<Coordinate> oldCoord = coord;
+
+	for(int i = 0; i < size; i++) {
+		for(int j = 0; j < size; j++) {
+			coord[i*size+j].sym = oldCoord[size*(size-j-1)+i].sym;
+		}
+	}
+
+	// test
+	for(int i = 0; i < size; i++) {
+		for (int j = 0; j < size; j++) {
+			if (coord[i*size+j].sym == "-") {
+				cout << " ";
+			}
+			else {
+				cout << coord[i*size+j].sym;
+			}
+		}
+		cout << endl;
 	}
 }
 
 void Block::counterClockwise(){
-	vector<Coordinate> oldCoord;
-	for(auto &c : coord) {
-		oldCoord.emplace_back(c);
+	for(int i = 0; i < 3; i++) {
+		Clockwise();
 	}
-	for (int i = 0; i < size; i++){
-		for (int j = 0; j < size; j++){
-			coord[i*size+j] = oldCoord[size*j+size-i-1];
+
+	// test
+	for(int i = 0; i < size; i++) {
+		for(int j = 0; j < size; j++) {
+			if (coord[i*size+j].sym == "-") {
+				cout << " ";
+			}
+			else {
+				cout << coord[i*size+j].sym;
+			}
 		}
+		cout << endl;
 	}
 }
 
-void Block::Clockwise(){
-	vector<Coordinate> oldCoord;
-	for(auto &c : coord) {
-		oldCoord.emplace_back(c);
-	}
-	for (int i = 0; i < size; i++){
-		for (int j = 0; j < size; j++){
-			coord[i*size+j] = oldCoord[size*(size-j-1)+i];
-		}
-	}
-}
 
-vector<coordinate> Block::getCoord(){
+// information aquisition
+vector<Coordinate> Block::getCoord() {
 	return coord;
 }
 
-
-int Block::getLevel(){
-	return level;
+string Block::getSym() {
+	return sym;
 }
 
 bool Block::Used(int r, int c) {
-	for (auto c : coord) {
-		if (c.row == r && c.col == c && c.sym != "-") {
+	for(auto i : coord) {
+		if ((i.row == r) && (i.col == c) && (i.sym != "-")) {
 			return true;
 		}
 	}
+
 	return false;
 }
+
+int Block::getLevel() {
+	return level;
+}
+
+bool Block::isHeavy() {
+	return heavy;
+}
+
+void Block::setHeavy() {
+	heavy = true;
+}
+
+void Block::unsetHeavy() {
+	heavy = false;
+}
+
