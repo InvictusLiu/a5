@@ -17,8 +17,8 @@ Block::Block(int level): level{level} {
 
 
 // copy ctor
-Block::Block(const Block &other): level{other.level}, heavy{other.heavy}, size{size},
-	coord{other.coord}, sym{sym} {}
+Block::Block(const Block &other): level{other.level}, heavy{other.heavy}, size{other.size},
+	coord{other.coord}, sym{other.sym} {}
 
 
 // copy assignment
