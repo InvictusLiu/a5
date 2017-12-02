@@ -18,3 +18,5 @@ class OBlock: public Block{
 
 	// dtor
 	~OBlock();
+};
+#endif
